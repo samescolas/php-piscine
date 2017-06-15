@@ -29,14 +29,4 @@ class Dice {
 	}
 }
 
-Dice::$verbose = True;
-$dice = array (
-	new Dice( array('num_sides' => 8) ),
-	new Dice(array())
-);
-
-echo 'Rolling the dice!' . PHP_EOL;
-foreach ($dice as $d)
-	echo "Rolled a " . $d->rollDie() . PHP_EOL;
-
 ?>
