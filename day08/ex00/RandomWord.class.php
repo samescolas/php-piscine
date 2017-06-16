@@ -9,7 +9,7 @@ class RandomWord extends Word {
 	const ADVERB = 4;
 	const ADJ = 5;
 	const SAYING = 6;
-	private $url = "https://www.randomlists.com/data/";
+	private $url = __DIR__ . "/data/";
 
 	public function __construct($args) {
 		extract($args);
@@ -41,7 +41,7 @@ class RandomWord extends Word {
 	}
 
 	public function getWord() {
-		$list = explode(",", file_get_contents($this->url . ".json"));
+		$list = explode(",", file_get_contents($this->url . ".txt"));
 		return preg_replace('/\"/', '', $list[rand(1, count($list) - 3)]);
 	}
 }

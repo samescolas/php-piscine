@@ -2,10 +2,11 @@
 <?php
 
 $count=0;
-while ($count < 10)
+while ($count < 1000)
 {
-	print "x";
+	print "X";
 	$count += 1;
 }
+print "\n";
 
 ?>

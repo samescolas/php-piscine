@@ -14,7 +14,7 @@ class Dice {
 			echo "Spun up a " . $this->num_sides . " sided die." . PHP_EOL;
 	}
 
-	public function rollDie() {
+	protected function rollDie() {
 		$this->value = rand(1, $this->num_sides);
 		return $this->value;
 	}
