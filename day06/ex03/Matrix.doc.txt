@@ -1,0 +1,21 @@
+<- Matrix ----------------------------------------------------------------------
+
+The Vector class handles vectors.
+
+An instance can be constructed by specifiying one of seven preset matrices or performing
+a multiplication of on these matrices:
+	IDENTITY -- The identity matrix.
+	SCALE -- A matrix to scale a vector. Required args: 'scale'
+	RX -- Rotation about the x-axis. Required args: 'angle'
+	RY -- Rotation about the y-axis. Required args: 'angle'
+	RZ -- Rotation about the z-axis. Required args: 'angle'
+	TRANSLATION -- Translation matrix. Required args: 'vtc'
+	PROJECTION -- Projection matrix.  Required args: 'fov', 'ratio', 'near', 'far'
+
+Formatting:
+	$M = new Matrix( array( 'preset' => Matrix::SCALE, 'scale' => 3 ) );
+
+This class also provides two methods -- mult and transformVertex which operate
+on another matrix or a vertex respectively.
+
+---------------------------------------------------------------------- Matrix ->

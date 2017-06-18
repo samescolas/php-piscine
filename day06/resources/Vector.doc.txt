@@ -1,0 +1,16 @@
+<- Vector ----------------------------------------------------------------------
+The Vector class handles vectors.
+
+An instance can be constructed by specifiying either by specifiying a destination vertex:
+new Vector( array( 'dest' => new Vertex( array( 'x' => 1.1, 'y' => 2.1, 'z' => 4.2 ) )) );
+
+Additionally you may specify a second origin vertex (otherwise origin is 0,0,0):
+new Vector( array( 
+	'dest' => new Vertex( array( 'x' => 1.1, 'y' => 2.1, 'z' => 4.2 ) ),
+	'orig' => new Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 0.0 ))
+));
+
+The class provides only getters as well as a few classes:
+	magnitude, dotProduct, cos return scalar values and
+	add, sub, opposite, normalize, scalarProduct, and crossProduct return Vectors.
+---------------------------------------------------------------------- Vector ->

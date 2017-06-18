@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>It's Over 9000(!)</title>
+		<style>
+			body {
+				background-color: gainsboro;
+			}
+			h1 {
+				text-align: center;
+				font-size: 4em;
+				font-family: sans-serif;
+				padding-top: 25px;
+			}
+			#calculator {
+				position: relative;
+				margin: 20% auto;
+				width: 100%;
+				height: 400px;
+				text-align: center;
+			}
+			form {
+				padding: 25px;
+				background-color: steelblue
+			}
+			input {
+				margin: 20px 10px 0 10px;
+				border-radius: 15px;
+				width: 60px;
+				height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Calculator</h1>
+		<div id="calculator">
+			<form id="form" onsubmit="calculateThings(this)">
+				<input type="text" name="a" value="" />
+				<select name="op">
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+					<option value="%">%</option>
+				</select>
+				<input type="text" name="b" value="" /> <br />
+				<input type="submit" value="Try me!" />
+			</form>
+		</div>
+
+		<script>
+			var re = /^\d+\.?0*$/;
+			function calculateThings(f) {
+				if (re.test(f.a.value) && re.test(f.b.value)) {
+					switch(f.op.value) {
+						case "+":
+							val = parseFloat(f.a.value) + parseFloat(f.b.value);
+							break ;
+						case "-":
+							val = parseFloat(f.a.value) - parseFloat(f.b.value);
+							break ;
+						case "*":
+							val = parseFloat(f.a.value) * parseFloat(f.b.value);
+							break ;
+						case "/":
+							if (parseFloat(f.b.value) == 0) {
+								alert("It's over 9000!");
+								exit();
+							}
+							else {
+								val = parseFloat(f.a.value) / parseFloat(f.b.value);
+							}
+							break ;
+						case "%":
+							if (parseFloat(f.b.value) == 0) {
+								alert("It's over 9000!");
+								exit();
+							}
+							else {
+								val = parseFloat(f.a.value) % parseFloat(f.b.value);
+							}
+							break ;
+						}
+					alert(val);
+					console.log(val);
+				}
+				else {
+					alert("Error :(");
+				}
+			}
+
+			window.setInterval(function() {
+				alert("Please, use me...");
+			}, 30000);
+		</script>
+	</body>
+</html>
